@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <link href="css/padrao.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $("#rem").click(function(e) {
+                addAprendidos(false);
+            });
+        });
+
+        $(document).ready(function(e) {
+            $("#add").click(function(e) {
+                addAprendidos(true);
+            });
+        });
+
+        $(document).ready(function(e) {
+            $("#tarefa").keydown(function(e) {
+                if ( e.which == 13 )
+                {
+                    $("#tarefas").append('<li><input type="checkbox" class="marcar" name="check[]" value="'+$('input').val()+'"><label>'+$('input').val()+'</label> </li>');
+                    //$('input').val('');
+                    $('input').focus();
+                }
+
+            });
+        });
+
+        function addAprendidos(other){
+            $('.marcar').each(
+                    function(){
+                        if($(this).prop("checked"))
+                        {
+                            if (other) {
+                                var item = $(this).attr('value');
+                                $("#aprendidos").append('<li>'+item+'</li>');
+                            }
+                            else
+                            {
+                                $(this).closest('li').remove();
+                            }
+                        }
+
+                    });
+
+        }
+    </script>
+
+</head>
+
+<body>
+<input id="tarefa" class="input" name="tarefa" type="text" lang="pt" value="Digite sua tarefa" size="30" maxlength="50">
+<a id="add" class="button green large">+</a>
+<a id="rem" class="button green large">-</a>
+<h1>Lista de temas a aprender:</h1>
+<p>Selecione a(s) tarefa(s) e clique em "+" para adicionar(las) a lista de temas aprendidos ou clique em "-" para remover o(s) tema(s)</p>
+<ul id="tarefas" class="lista">
+</ul>
+<br/>
+<h1>Lista de temas aprendidos:</h1>
+<ul id="aprendidos" class="lista">
+</ul>
+</body>
+</html>
