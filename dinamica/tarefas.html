@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Untitled Document</title>
+    <title>Lista de disciplinas</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <link href="css/padrao.css" rel="stylesheet" type="text/css">
 
@@ -57,7 +59,8 @@
 </head>
 
 <body>
-<input id="tarefa" class="input" name="tarefa" type="text" lang="pt" value="Digite sua tarefa" size="30" maxlength="50">
+<p>Digite sua tarefa:</p>
+<input id="tarefa" class="input" name="tarefa" type="text" lang="pt" value="" size="30" maxlength="50">
 <h1>Lista de temas a aprender:</h1>
 <p>Selecione a(s) tarefa(s) e clique em "+" para adicionar(las) a lista de temas aprendidos ou clique em "-" para remover o(s) tema(s)</p>
 <a id="add" class="button green large">+</a>
@@ -68,5 +71,6 @@
 <h1>Lista de temas aprendidos:</h1>
 <ul id="aprendidos" class="lista">
 </ul>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
