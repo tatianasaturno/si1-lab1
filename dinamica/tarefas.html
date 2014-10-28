@@ -10,17 +10,20 @@
         $(document).ready(function(e) {
             $("#rem").click(function(e) {
                 addAprendidos(false);
+                // adicionar itens
             });
         });
 
         $(document).ready(function(e) {
             $("#add").click(function(e) {
                 addAprendidos(true);
+                // adicionar itens
             });
         });
 
         $(document).ready(function(e) {
             $("#tarefa").keydown(function(e) {
+                // adicionar itens
                 if ( e.which == 13 )
                 {
                     $("#tarefas").append('<li><input type="checkbox" class="marcar" name="check[]" value="'+$('input').val()+'"><label>'+$('input').val()+'</label> </li>');
@@ -55,10 +58,10 @@
 
 <body>
 <input id="tarefa" class="input" name="tarefa" type="text" lang="pt" value="Digite sua tarefa" size="30" maxlength="50">
-<a id="add" class="button green large">+</a>
-<a id="rem" class="button green large">-</a>
 <h1>Lista de temas a aprender:</h1>
 <p>Selecione a(s) tarefa(s) e clique em "+" para adicionar(las) a lista de temas aprendidos ou clique em "-" para remover o(s) tema(s)</p>
+<a id="add" class="button green large">+</a>
+<a id="rem" class="button green large">-</a>
 <ul id="tarefas" class="lista">
 </ul>
 <br/>
